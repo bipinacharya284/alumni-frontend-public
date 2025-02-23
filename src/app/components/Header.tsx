@@ -35,6 +35,11 @@ const Header = () => {
           <Link href="/about">
             <span className="hover:text-orange-300 cursor-pointer">About</span>
           </Link>
+          <Link href="https://forms.gle/eHwNoXwWfrY2osiB7">
+            <span className="hover:text-orange-300 cursor-pointer">
+              Report Bug
+            </span>
+          </Link>
         </nav>
 
         {/* ✅ HAMBURGER ICON (Mobile) */}
@@ -67,6 +72,13 @@ const Header = () => {
                   onClick={() => setMenuOpen(false)}
                 >
                   About
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://forms.gle/eHwNoXwWfrY2osiB7">
+                <span className="hover:text-orange-300 cursor-pointer">
+                  Report Bug
                 </span>
               </Link>
             </li>
