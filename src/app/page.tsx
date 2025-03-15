@@ -16,9 +16,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
-  const HF_API_URL = "https://acharyaBipin-major.hf.space/run/predict"; // ✅ Update to your Hugging Face Space URL
+  const HF_API_URL = "https://acharyaBipin-major.hf.space/run/predict"; // Update to your Hugging Face Space URL
 
-  // ✅ Auto-scroll to bottom
+  // Auto-scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -27,7 +27,7 @@ export default function Home() {
     scrollToBottom();
   }, [messages, loading]);
 
-  // ✅ Fetch response from Hugging Face
+  //  Fetch response from Hugging Face
   const getBotResponse = async (userMessage: string) => {
     try {
       const response = await axios.post(
@@ -43,7 +43,7 @@ export default function Home() {
     }
   };
 
-  // ✅ Handle Send Button
+  // Handle Send Button
   const handleSend = async () => {
     if (input.trim() && !loading) {
       const userMessage = { sender: "user", text: input };
@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col  h-full bg-gray-100">
-      {/* ✅ Chat Area (Scrollable) */}
+      {/* Chat Area (Scrollable) */}
       <div className="flex-grow overflow-y-auto  p-4 bg-gray-50 scroll-smooth">
         {messages.length === 0 && !loading && (
           <div className="flex items-center justify-center h-full text-gray-400 text-xl">
@@ -69,7 +69,7 @@ export default function Home() {
           </div>
         )}
 
-        {/* ✅ Chat Messages */}
+        {/* Chat Messages */}
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
         ))}
 
-        {/* ✅ Loading Spinner */}
+        {/* Loading Spinner */}
         {loading && (
           <div className="flex justify-center my-4">
             <ImSpinner2 className="animate-spin text-blue-600 text-3xl" />
@@ -107,7 +107,7 @@ export default function Home() {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* ✅ Chat Input */}
+      {/*Chat Input */}
       <ChatInput
         input={input}
         setInput={setInput}
